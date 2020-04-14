@@ -20,6 +20,7 @@ const handleSubmit = (values, navigation) => {
     .then(res => {
       if (res.status == 200) {
         Alert.alert('', 'Login realizado com sucesso.');
+        console.log('', 'Login realizado com sucesso.');
         AsyncStorage.setItem('token', res.data)
           .then(value => {
             navigation.navigate('Produtos');
@@ -31,6 +32,7 @@ const handleSubmit = (values, navigation) => {
     })
     .catch(err => {
       Alert.alert('Erro', err.response.data);
+      console.log('Erro', err.response.data);
     });
 };
 
